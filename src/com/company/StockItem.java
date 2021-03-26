@@ -3,13 +3,13 @@ package com.company;
 public class StockItem implements Comparable<StockItem> {
     private final String name;
     private double price;
-    private int quantityStock = 0; // can be initialized later
+    private int quantityStock = 0;
     private int reserved = 0;
 
     public StockItem(String name, double price) {
         this.name = name;
         this.price = price;
-        this.quantityStock = 0; // or here (but you wouldn't normally do both)
+        this.quantityStock = 0;
     }
 
     public StockItem(String name, double price, int quantityStock) {
@@ -48,7 +48,7 @@ public class StockItem implements Comparable<StockItem> {
         }
     }
     public int reserveItem(int quantity) {
-        if(quantity <= availableQuantity()) {// use the method not the field
+        if(quantity <= availableQuantity()) {
             reserved += quantity;
             return quantity;
         }
