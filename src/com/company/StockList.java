@@ -13,12 +13,11 @@ public class StockList {
     }
     public int addStock(StockItem item) {
         if (item != null) {
-            //check if already have quantities of this item
+            
             StockItem inStock = list.getOrDefault(item.getName(),item);
-            //StockItem inStock = list.get(item.getName());//it's the second way to retrieve item
-            // if there are already stocks on this item, adjust the quantity
+            
             if(inStock != item)
-            //if(inStock != null) //it's the second way to retrieve item
+            
             {
                 item.adjustStock(inStock.availableQuantity());
             }
